@@ -1,7 +1,7 @@
 # Maintainer: Felix Xing <fxing@qnx.com>
 pkgname=libsysv-ipc-shim
 pkgver=0.1.0
-pkgrel=1
+pkgrel=${pkgrel:-0}
 pkgdesc="Felix's ipc.h shim"
 url="https://qnx.com"
 arch="all"
@@ -30,6 +30,7 @@ dev() {
     depends="$pkgname=$pkgver-r$pkgrel"
 }
 
+options="$options ${DISABLE_CHECK:+!check}"
 sha512sums="
 7ae435811bc62288cc5b8e2dc4c06fe403a3609fd72385efa30dff967fe2f2619ed820072ef11ca6da6a6c7ac4ed313066dd25639c73c68f3396d0736639ba59  libsysv-ipc.tar.gz
 "
